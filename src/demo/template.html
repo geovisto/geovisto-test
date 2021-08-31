@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="demo-container">
+        <div className="demo-toolbar">
+            <span>Data file: </span>
+            <select id="leaflet-combined-map-select-data">
+                <option value="timeData.json">timeData.json</option>
+                <option value="demo1.json">demo1.json</option>
+                <option value="demo2.json">demo2.json</option>
+                <option value="covidCzechDistricts.json">covid czech districts</option>
+                <option value="covidCzechDistrictsCumulative.json">covid czech districts (cumulative)</option>
+                <option value="covidCzechDistrictsCategoric.json">covid czech districts (categoric)</option>
+                <option disabled></option>
+            </select>
+
+            <span> or <input id="leaflet-combined-map-check-data" type="checkbox"/> custom file: </span>
+            <input id="leaflet-combined-map-input-data" type="file" accept=".json" size={3}/>
+
+            <input id="leaflet-combined-map-check-config" type="checkbox"/>
+            <span> Configuration file: </span>
+            <input id="leaflet-combined-map-input-config" type="file" accept=".json" size={3}/>
+
+            <input id="leaflet-combined-map-input-import" type="submit" value="import"/>
+            <input id="leaflet-combined-map-input-export" type="submit" value="export"/>
+        </div>
+        <div class="demo-map">
+            <div id="my-geovisto-map" class="geovisto-map" />
+        </div>
+    </div>
+</body>
+</html>
