@@ -17,6 +17,8 @@ import { GeovistoMarkerLayerTool } from 'geovisto-layer-marker';
 import 'geovisto-layer-marker/dist/index.css';
 import { GeovistoConnectionLayerTool } from 'geovisto-layer-connection';
 import 'geovisto-layer-connection/dist/index.css';
+import { GeovistoHierarchyTool } from 'geovisto-hierarchy';
+import { GeovistoGeoDownloaderTool} from 'geovisto-geo-downloader';
 
 import "./demo.scss";
 
@@ -41,23 +43,25 @@ export class Demo {
     private centroids: Record<string, unknown>;
     private polygons2: Record<string, unknown>;
     private centroids2: Record<string, unknown>;
+    private hierarchyCentroids: Record<string, unknown>;
     private data!: Record<string, unknown>;
     private config!: Record<string, unknown>;
 
     public constructor() {
         // initialize geo objects
-        this.polygons = require("/static/geo/country_polygons.json");
+        this.polygons = require("/static/geo/geo-hierarchy_covidData.json");
         this.centroids = require("/static/geo/country_centroids.json");
         this.polygons2 = require("/static/geo/czech_districts_polygons.json");
         this.centroids2 = require("/static/geo/czech_districts_centroids.json");
+        this.hierarchyCentroids = require("/static/geo/geo-hierarchy_covidDataPoint.json");
     }
 
     /**
      * It renders the demo.
      */
     public render(): void {
-        this.data = require('/static/data/timeData.json');
-        this.config = require('/static/config/config.json');
+        this.data = require('/static/data/data-hierarchy_covidData.json');
+        this.config = require('/static/config/config-hierarchy_covidData.json');
         
         this.createMap(this.config, this.data);
         this.prepareToolbar();
@@ -92,16 +96,23 @@ export class Demo {
             id: "my-geovisto-map",
             data: Geovisto.getMapDataManagerFactory().json(data),
             geoData: Geovisto.getGeoDataManager([
-                Geovisto.getGeoDataFactory().geojson("world polygons", this.polygons),
+                Geovisto.getGeoDataFactory().geojson("Hierarchy covid", this.polygons),
                 Geovisto.getGeoDataFactory().geojson("world centroids", this.centroids),
                 Geovisto.getGeoDataFactory().geojson("czech polygons", this.polygons2),
-                Geovisto.getGeoDataFactory().geojson("czech centroids", this.centroids2)
+                Geovisto.getGeoDataFactory().geojson("czech centroids", this.centroids2),
+                Geovisto.getGeoDataFactory().geojson("Hierarchy covid Point", this.hierarchyCentroids)
             ]),
             globals: undefined,
             templates: undefined,
             tools: Geovisto.createMapToolsManager([
                 GeovistoSidebarTool.createTool({
                     id: "geovisto-tool-sidebar",
+                }),
+                GeovistoHierarchyTool.createTool({
+                    id: "geovisto-tool-hierarchy",
+                }),
+                GeovistoGeoDownloaderTool.createTool({
+                    id: "geovisto-tool-geo-downloader",
                 }),
                 GeovistoFiltersTool.createTool({
                     id: "geovisto-tool-filters",
