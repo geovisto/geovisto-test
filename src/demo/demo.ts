@@ -15,6 +15,8 @@ import { GeovistoChoroplethLayerTool } from 'geovisto-layer-choropleth';
 import 'geovisto-layer-choropleth/dist/index.css';
 import { GeovistoMarkerLayerTool } from 'geovisto-layer-marker';
 import 'geovisto-layer-marker/dist/index.css';
+import {GeovistoLegendTool} from 'geovisto-legend';
+import 'geovisto-legend/dist/index.css';
 import { GeovistoConnectionLayerTool } from 'geovisto-layer-connection';
 import 'geovisto-layer-connection/dist/index.css';
 
@@ -42,6 +44,7 @@ export class Demo {
     private polygons2: Record<string, unknown>;
     private centroids2: Record<string, unknown>;
     private data!: Record<string, unknown>;
+    private infodata: unknown;
     private config!: Record<string, unknown>;
 
     public constructor() {
@@ -50,6 +53,7 @@ export class Demo {
         this.centroids = require("/static/geo/country_centroids.json");
         this.polygons2 = require("/static/geo/czech_districts_polygons.json");
         this.centroids2 = require("/static/geo/czech_districts_centroids.json");
+        console.log(this.infodata);
     }
 
     /**
@@ -57,7 +61,7 @@ export class Demo {
      */
     public render(): void {
         this.data = require('/static/data/timeData.json');
-        this.config = require('/static/config/config.json');
+        this.config = require('/static/config/config-timeData.json');
         
         this.createMap(this.config, this.data);
         this.prepareToolbar();
@@ -139,6 +143,9 @@ export class Demo {
                 }),
                 GeovistoConnectionLayerTool.createTool({
                     id: "geovisto-tool-layer-connection"
+                }),
+                GeovistoLegendTool.createTool({
+                    id: "geovisto-tool-legend"
                 }),
             ])
         };

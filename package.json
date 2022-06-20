@@ -49,6 +49,7 @@
     "geovisto-layer-tiles": "^2.0.0",
     "geovisto-selection": "^2.0.0",
     "geovisto-sidebar": "^2.0.0",
+    "geovisto-legend": "file:../geovisto-legend/geovisto-legend-0.9.0.tgz",
     "geovisto-themes": "^2.0.1",
     "leaflet": "^1.7.1"
   }
