@@ -41,8 +41,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "geovisto": "^2.0.0",
-    "geovisto-filters": "^2.0.0",
+    "geovisto": "^2.1.0",
+    "geovisto-filters": "^2.1.0",
     "geovisto-layer-choropleth": "^2.0.0",
     "geovisto-layer-connection": "^2.0.0",
     "geovisto-layer-marker": "^2.0.0",
