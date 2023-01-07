@@ -6,6 +6,7 @@ import {
 import 'geovisto/dist/index.css';
 
 import { GeovistoSelectionTool } from 'geovisto-selection';
+import { GeovistoHeatLayerTool } from 'geovisto-layer-heat';
 import { GeovistoThemesTool } from 'geovisto-themes';
 import { GeovistoFiltersTool } from 'geovisto-filters';
 import { GeovistoSidebarTool } from 'geovisto-sidebar';
@@ -56,7 +57,7 @@ export class Demo {
      * It renders the demo.
      */
     public render(): void {
-        this.data = require('/static/data/timeData.json');
+        this.data = require('/static/data/test-dot1.json');
         this.config = require('/static/config/config.json');
         
         this.createMap(this.config, this.data);
@@ -139,6 +140,9 @@ export class Demo {
                 }),
                 GeovistoConnectionLayerTool.createTool({
                     id: "geovisto-tool-layer-connection"
+                }),
+                GeovistoHeatLayerTool.createTool({
+                    id: "geovisto-tool-layer-heat"
                 }),
             ])
         };

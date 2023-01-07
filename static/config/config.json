@@ -67,6 +67,13 @@
               "name": "Timeline",
               "icon": "<i class=\"fa fa-clock-o\" />",
               "checkButton": true
+            },
+            {
+              "tool": "geovisto-tool-layer-heat",
+              "enabled": true,
+              "name": "Heat",
+              "icon": "<i class=\"fa fa-fire\"></i>",
+              "checkButton": true
             }
             ]
         },
@@ -154,7 +161,23 @@
             "chartAggregationFn": ""
           },
           "stories": []
-        }
+        },
+        {
+			"type": "geovisto-tool-layer-heat",
+			"id": "geovisto-tool-layer-heat",
+			"enabled": true,
+			"layerName": "Heat layer",
+			"data": {
+				"latitude": "",
+				"longitude": "",
+				"radius": 0,
+				"intensity": "",
+				"gradient": "",
+				"blur": 0,
+				"zoom": "",
+				"operation": ""
+			}
+		}
     ]
 }
   
