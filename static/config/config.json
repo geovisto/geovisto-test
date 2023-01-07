@@ -67,6 +67,13 @@
               "name": "Timeline",
               "icon": "<i class=\"fa fa-clock-o\" />",
               "checkButton": true
+            },
+            {
+                "tool": "geovisto-tool-layer-dot",
+                "enabled": true,
+                "name": "Dot layer settings",
+                "icon": "<i class=\"fa fa-dot-circle-o\"></i>",
+                "checkButton": true
             }
             ]
         },
@@ -154,7 +161,18 @@
             "chartAggregationFn": ""
           },
           "stories": []
-        }
+        },
+        {
+			"type": "geovisto-tool-layer-dot",
+			"id": "geovisto-tool-layer-dot",
+			"enabled": true,
+			"layerName": "Dot layer",
+			"data": {
+				"latitude": "",
+				"longitude": "",
+				"category": ""
+			}
+		}
     ]
 }
   
