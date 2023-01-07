@@ -67,6 +67,13 @@
               "name": "Timeline",
               "icon": "<i class=\"fa fa-clock-o\" />",
               "checkButton": true
+            },
+            {
+                "tool": "geovisto-tool-layer-bubble",
+                "enabled": true,
+                "name": "Bubble layer settings",
+                "icon": "<i class=\"fa fa-pie-chart\"></i>",
+                "checkButton": true
             }
             ]
         },
@@ -154,7 +161,18 @@
             "chartAggregationFn": ""
           },
           "stories": []
-        }
+        },
+        {
+			"type": "geovisto-tool-layer-bubble",
+			"id": "geovisto-tool-layer-bubble",
+			"enabled": true,
+			"layerName": "Buble layer",
+			"data": {
+				"latitude": "",
+				"longitude": "",
+				"value": ""
+			}
+		}
     ]
 }
   
