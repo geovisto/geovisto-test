@@ -7,6 +7,7 @@ import 'geovisto/dist/index.css';
 
 import { GeovistoSelectionTool } from 'geovisto-selection';
 import { GeovistoHeatLayerTool } from 'geovisto-layer-heat';
+import 'geovisto-layer-heat/dist/index.css';
 import { GeovistoThemesTool } from 'geovisto-themes';
 import { GeovistoFiltersTool } from 'geovisto-filters';
 import { GeovistoSidebarTool } from 'geovisto-sidebar';
@@ -57,8 +58,8 @@ export class Demo {
      * It renders the demo.
      */
     public render(): void {
-        this.data = require('/static/data/test-dot1.json');
-        this.config = require('/static/config/config.json');
+        this.data = require('/static/data/nycAirbnbPrices.json');
+        this.config = require('/static/config/config-nycAirbnbPrices.json');
         
         this.createMap(this.config, this.data);
         this.prepareToolbar();
@@ -113,24 +114,28 @@ export class Demo {
                         GeovistoFiltersTool.createFilterOperationReg()
                     ])
                 }),
-                GeovistoThemesTool.createTool({
-                    id: "geovisto-tool-themes",
-                    manager: GeovistoThemesTool.createThemesManager([
-                        // style themes
-                        GeovistoThemesTool.createThemeLight1(),
-                        GeovistoThemesTool.createThemeLight2(),
-                        GeovistoThemesTool.createThemeLight3(),
-                        GeovistoThemesTool.createThemeDark1(),
-                        GeovistoThemesTool.createThemeDark2(),
-                        GeovistoThemesTool.createThemeDark3(),
-                        GeovistoThemesTool.createThemeBasic()
-                    ])
-                }),
+                // GeovistoThemesTool.createTool({
+                //     id: "geovisto-tool-themes",
+                //     manager: GeovistoThemesTool.createThemesManager([
+                //         // style themes
+                //         GeovistoThemesTool.createThemeLight1(),
+                //         GeovistoThemesTool.createThemeLight2(),
+                //         GeovistoThemesTool.createThemeLight3(),
+                //         GeovistoThemesTool.createThemeDark1(),
+                //         GeovistoThemesTool.createThemeDark2(),
+                //         GeovistoThemesTool.createThemeDark3(),
+                //         GeovistoThemesTool.createThemeBasic()
+                //     ])
+                // }),
                 GeovistoSelectionTool.createTool({
                     id: "geovisto-tool-selection"
                 }),
                 GeovistoTilesLayerTool.createTool({
-                    id: "geovisto-tool-layer-map"
+                    baseMap: {
+                        maxZoom: 18,
+                        url: 'https://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png'                      
+                    },
+                    id: "geovisto-tool-layer-tiles"
                 }),
                 GeovistoChoroplethLayerTool.createTool({
                     id: "geovisto-tool-layer-choropleth"

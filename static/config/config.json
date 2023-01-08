@@ -177,7 +177,12 @@
 				"zoom": "",
 				"operation": ""
 			}
-		}
+		},
+        {
+            "type": "geovisto-tool-layer-tiles",
+            "id": "geovisto-tool-layer-tiles",
+            "enabled": true
+        }
     ]
 }
   
