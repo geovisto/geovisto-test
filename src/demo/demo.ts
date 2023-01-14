@@ -57,7 +57,7 @@ export class Demo {
      * It renders the demo.
      */
     public render(): void {
-        this.data = require('/static/data/test-dot2.json');
+        this.data = require('/static/data/covidCases.json');
         this.config = require('/static/config/config.json');
         
         this.createMap(this.config, this.data);
