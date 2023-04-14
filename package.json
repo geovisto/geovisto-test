@@ -50,6 +50,7 @@
     "geovisto-selection": "^2.0.0",
     "geovisto-sidebar": "^2.0.0",
     "geovisto-themes": "^2.0.1",
+    "geovisto-timeline": "file:../geovisto-timeline/geovisto-timeline-0.9.0.tgz",
     "leaflet": "^1.7.1"
   }
 }

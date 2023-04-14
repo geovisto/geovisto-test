@@ -17,6 +17,8 @@ import { GeovistoMarkerLayerTool } from 'geovisto-layer-marker';
 import 'geovisto-layer-marker/dist/index.css';
 import { GeovistoConnectionLayerTool } from 'geovisto-layer-connection';
 import 'geovisto-layer-connection/dist/index.css';
+import { GeovistoTimelineTool } from 'geovisto-timeline'
+import 'geovisto-timeline/dist/index.css';
 
 import "./demo.scss";
 
@@ -56,7 +58,7 @@ export class Demo {
      * It renders the demo.
      */
     public render(): void {
-        this.data = require('/static/data/timeData.json');
+        this.data = require('/static/data/covidCzechDistrictsCategoric.json');
         this.config = require('/static/config/config.json');
         
         this.createMap(this.config, this.data);
@@ -139,6 +141,9 @@ export class Demo {
                 }),
                 GeovistoConnectionLayerTool.createTool({
                     id: "geovisto-tool-layer-connection"
+                }),
+                GeovistoTimelineTool.createTool({
+                    id: "geovisto-tool-layer-timeline"
                 }),
             ])
         };

@@ -1,8 +1,8 @@
 {
-    "zoom": 2,
-    "center": {
-      "lat": 50.064191736659104,
-      "lng": 0
+    "zoom": 8,
+    "mapCenter": {
+      "lat": 49.8037633,
+      "lng":  15.4749126
     },
     "tools": [
         {
@@ -48,21 +48,7 @@
                 "checkButton": true
             },
             {
-                "tool": "geovisto-tool-layer-marker",
-                "enabled": true,
-                "name": "Marker layer settings",
-                "icon": "<i class=\"fa fa-map-marker\"></i>",
-                "checkButton": true
-            },
-            {
-                "tool": "geovisto-tool-layer-connection",
-                "enabled": true,
-                "name": "Connection layer settings",
-                "icon": "<i class=\"fa fa-road\"></i>",
-                "checkButton": true
-            },
-            {
-              "tool": "geovisto-tool-timeline",
+              "tool": "geovisto-tool-layer-timeline",
               "enabled": true,
               "name": "Timeline",
               "icon": "<i class=\"fa fa-clock-o\" />",
@@ -104,54 +90,30 @@
             "enabled": true,
             "layerName": "Choropleth layer",
             "data": {
-            "country": "",
-            "value": "",
-            "aggregation": "",
-            "scaling": "median",
-            "range": 7,
-            "customColor": true,
-            "color": "#e32400"
+                "geoData": "czech polygons",
+                "geoId": "okres",
+                "value": "pocet",
+                "aggregation": "sum",
+                "customColor": true,
+                "color": "#E9967A",
+                "range": 7,
+                "scaling": "median"
             }
         },
         {
-            "type": "geovisto-tool-layer-marker",
-            "id": "geovisto-tool-layer-marker",
-            "enabled": true,
-            "layerName": "Marker layer",
-            "data": {
-            "country": "",
-            "value": "",
-            "aggregation": "",
-            "category": ""
-            }
-        },
-        {
-            "type": "geovisto-tool-layer-connection",
-            "id": "geovisto-tool-layer-connection",
-            "enabled": true,
-            "layerName": "Connection layer",
-            "data": {
-            "from": "",
-            "to": "",
-            "animateDirection": false
-            }
-        },
-        {
-          "type": "geovisto-tool-timeline",
-          "id": "geovisto-tool-timeline",
-          "enabled": false,
+          "type": "geovisto-tool-layer-timeline",
+          "id": "geovisto-tool-layer-timeline",
+          "enabled": true,
           "layerName": "Timeline",
           "data": {
-            "timePath": "",
-            "stepTimeLength": 3000,
-            "transitionDuration": 2500,
-            "storyEnabled": false,
-            "story": "",
-            "realTimeEnabled": false,
-            "granularity": "",
-            "chartEnabled": false,
-            "chartValuePath": "",
-            "chartAggregationFn": ""
+            "timePath": "datum",
+            "stepTimeLength": 2000,
+            "transitionDuration": 1500,
+            "realTimeEnabled": true,
+            "granularity": "DAY",
+            "chartEnabled": true,
+            "chartValuePath": "pocet",
+            "chartAggregationFn": "sum"
           },
           "stories": []
         }
