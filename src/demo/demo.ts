@@ -17,8 +17,8 @@ import { GeovistoMarkerLayerTool } from 'geovisto-layer-marker';
 import 'geovisto-layer-marker/dist/index.css';
 import { GeovistoConnectionLayerTool } from 'geovisto-layer-connection';
 import 'geovisto-layer-connection/dist/index.css';
-import { GeovistoTimelineTool } from 'geovisto-timeline'
-import 'geovisto-timeline/dist/index.css';
+import { GeovistoDrawingLayerTool } from 'geovisto-layer-drawing'
+import 'geovisto-layer-drawing/dist/index.css';
 
 import "./demo.scss";
 
@@ -142,8 +142,8 @@ export class Demo {
                 GeovistoConnectionLayerTool.createTool({
                     id: "geovisto-tool-layer-connection"
                 }),
-                GeovistoTimelineTool.createTool({
-                    id: "geovisto-tool-layer-timeline"
+                GeovistoDrawingLayerTool.createTool({
+                    id: "geovisto-tool-layer-drawing",
                 }),
             ])
         };

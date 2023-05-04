@@ -48,11 +48,11 @@
                 "checkButton": true
             },
             {
-              "tool": "geovisto-tool-layer-timeline",
-              "enabled": true,
-              "name": "Timeline",
-              "icon": "<i class=\"fa fa-clock-o\" />",
-              "checkButton": true
+                "tool": "geovisto-tool-layer-drawing",
+                "enabled": true,
+                "name": "GeoJSON creator",
+                "icon": "<i class=\"fa fa-pencil\"></i>",
+                "checkButton": true
             }
             ]
         },
@@ -87,7 +87,7 @@
         {
             "type": "geovisto-tool-layer-choropleth",
             "id": "geovisto-tool-layer-choropleth",
-            "enabled": true,
+            "enabled": false,
             "layerName": "Choropleth layer",
             "data": {
                 "geoData": "czech polygons",
@@ -100,23 +100,12 @@
                 "scaling": "median"
             }
         },
-        {
-          "type": "geovisto-tool-layer-timeline",
-          "id": "geovisto-tool-layer-timeline",
-          "enabled": true,
-          "layerName": "Timeline",
-          "data": {
-            "timePath": "datum",
-            "stepTimeLength": 2000,
-            "transitionDuration": 1500,
-            "realTimeEnabled": true,
-            "granularity": "DAY",
-            "chartEnabled": true,
-            "chartValuePath": "pocet",
-            "chartAggregationFn": "sum"
-          },
-          "stories": []
-        }
+		{
+			"type": "geovisto-tool-layer-drawing",
+			"id": "geovisto-tool-layer-drawing",
+			"enabled": false,
+			"layerName": "GeoJSON creator"
+		}
     ]
 }
   
