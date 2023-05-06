@@ -1,0 +1,88 @@
+{
+    "zoom": 19,
+    "mapCenter": {
+        "lat": 49.16462535698005,
+        "lon": 16.76225515573961
+    },
+    "tools": [
+        {
+            "type": "geovisto-tool-sidebar",
+            "id": "geovisto-tool-sidebar",
+            "enabled": true,
+            "tabs": [
+            {
+                "enabled": true,
+                "name": "General settings",
+                "icon": "<i class=\"fa fa-gear\"></i>",
+                "checkButton": false,
+                "fragments": [
+                {
+                    "tool": "geovisto-tool-themes",
+                    "enabled": true
+                },
+                {
+                    "tool": "geovisto-tool-selection",
+                    "enabled": true
+                }
+                ]
+            },
+            {
+              "tool": "geovisto-tool-layer-heat",
+              "enabled": true,
+              "name": "Heat",
+              "icon": "<i class=\"fa fa-fire\"></i>",
+              "checkButton": true
+            },
+            {
+              "tool": "geovisto-tool-timeline",
+              "enabled": true,
+              "name": "Timeline",
+              "icon": "<i class=\"fa fa-clock-o\" />",
+              "checkButton": true
+            }
+            ]
+        },
+        {
+            "type": "geovisto-tool-settings",
+            "id": "geovisto-tool-settings",
+            "enabled": true
+        },
+      {
+			"type": "geovisto-tool-layer-heat",
+			"id": "geovisto-tool-layer-heat",
+			"enabled": true,
+			"layerName": "Heat layer",
+			"data": {
+				"latitude": "lat",
+				"longitude": "lon",
+				"radius": 20,
+				"intensity": "temp",
+				"gradient": "Default",
+				"blur": 23,
+				"zoom": "Normal"
+			}
+		  },
+      {
+          "type": "geovisto-tool-layer-tiles",
+          "id": "geovisto-tool-layer-tiles",
+          "enabled": true
+      },
+      {
+        "type": "geovisto-tool-timeline",
+        "id": "geovisto-tool-timeline",
+        "enabled": true,
+        "layerName": "Timeline",
+        "data": {
+          "timePath": "date",
+          "stepTimeLength": 200,
+          "transitionDuration": 2500,
+          "realTimeEnabled": true,
+          "granularity": "DAY",
+          "chartEnabled": true,
+          "chartValuePath": "temp",
+          "chartAggregationFn": "sum"
+        }
+      }
+    ]
+}
+  

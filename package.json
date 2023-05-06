@@ -1,56 +1,57 @@
 {
-  "name": "geovisto-test",
-  "version": "2.0.0",
-  "description": "Help repository which demonstrates usage of Geovisto packages",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "start": "webpack serve --config webpack.config.js --open"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
+    "name": "geovisto-test",
+    "version": "2.0.0",
+    "description": "Help repository which demonstrates usage of Geovisto packages",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack --config webpack.config.js",
+        "start": "webpack serve --config webpack.config.js --open"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    },
+    "devDependencies": {
+        "@babel/core": "^7.14.6",
+        "@babel/plugin-transform-runtime": "^7.14.5",
+        "@babel/preset-env": "^7.14.7",
+        "@types/leaflet": "^1.7.4",
+        "@types/node": "^12.20.15",
+        "babel-loader": "^8.2.2",
+        "css-loader": "^5.2.6",
+        "file-loader": "^6.2.0",
+        "html-loader": "^2.1.2",
+        "html-webpack-plugin": "^5.3.2",
+        "husky": "^6.0.0",
+        "prettier": "^2.3.2",
+        "pretty-quick": "^3.1.1",
+        "rimraf": "^3.0.2",
+        "sass": "^1.35.1",
+        "sass-loader": "^12.1.0",
+        "style-loader": "^3.0.0",
+        "ts-loader": "^9.2.3",
+        "ts-node": "^10.0.0",
+        "typescript": "^4.3.4",
+        "webpack": "^5.40.0",
+        "webpack-cli": "^4.7.2",
+        "webpack-dev-server": "^3.11.2"
+    },
+    "dependencies": {
+        "geovisto": "^2.1.0",
+        "geovisto-filters": "^2.1.0",
+        "geovisto-layer-choropleth": "^2.0.0",
+        "geovisto-layer-connection": "^2.0.0",
+        "geovisto-layer-heat": "^0.9.0",
+        "geovisto-layer-marker": "^2.0.0",
+        "geovisto-layer-tiles": "^2.0.0",
+        "geovisto-selection": "^2.0.0",
+        "geovisto-sidebar": "^2.0.0",
+        "geovisto-themes": "^2.0.1",
+        "geovisto-timeline": "^0.9.0",
+        "leaflet": "^1.7.1"
     }
-  },
-  "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/plugin-transform-runtime": "^7.14.5",
-    "@babel/preset-env": "^7.14.7",
-    "@types/leaflet": "^1.7.4",
-    "@types/node": "^12.20.15",
-    "babel-loader": "^8.2.2",
-    "css-loader": "^5.2.6",
-    "file-loader": "^6.2.0",
-    "html-loader": "^2.1.2",
-    "html-webpack-plugin": "^5.3.2",
-    "husky": "^6.0.0",
-    "prettier": "^2.3.2",
-    "pretty-quick": "^3.1.1",
-    "rimraf": "^3.0.2",
-    "sass": "^1.35.1",
-    "sass-loader": "^12.1.0",
-    "style-loader": "^3.0.0",
-    "ts-loader": "^9.2.3",
-    "ts-node": "^10.0.0",
-    "typescript": "^4.3.4",
-    "webpack": "^5.40.0",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
-  },
-  "dependencies": {
-    "geovisto": "^2.1.0",
-    "geovisto-filters": "^2.1.0",
-    "geovisto-layer-choropleth": "^2.0.0",
-    "geovisto-layer-connection": "^2.0.0",
-    "geovisto-layer-heat": "file:../geovisto-layer-heat/geovisto-layer-heat-0.9.0.tgz",
-    "geovisto-layer-marker": "^2.0.0",
-    "geovisto-layer-tiles": "^2.0.0",
-    "geovisto-selection": "^2.0.0",
-    "geovisto-sidebar": "^2.0.0",
-    "geovisto-themes": "^2.0.1",
-    "leaflet": "^1.7.1"
-  }
 }
